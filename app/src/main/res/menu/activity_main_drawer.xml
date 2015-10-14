@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/CL" android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Casa Libertad" />
+        <item android:id="@+id/CH" android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Centro historico" />
+        <item android:id="@+id/Cuau" android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Cuautepec" />
+        <item android:id="@+id/DV" android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Del Valle" />
+        <item android:id="@+id/SLT" android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="San Lorenzo Tezonco" />
+    </group>
+
+    <item android:title="Redes Sociales">
+        <menu>
+            <item android:id="@+id/facebookC" android:icon="@android:drawable/ic_menu_share"
+                android:title="Facebook" />
+            <item android:id="@+id/twitterC" android:icon="@android:drawable/ic_menu_share"
+                android:title="Twitter" />
+            <item android:id="@+id/facebookMoba" android:icon="@android:drawable/ic_menu_share"
+                android:title="MOBA UACM" />
+        </menu>
+    </item>
+
+</menu>

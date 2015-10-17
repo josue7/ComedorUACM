@@ -45,14 +45,15 @@
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:text="Bienvenidos"
-                    android:textColor="@color/colorPrimary"/>
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25dp"/>
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
                     android:background="@color/colorPrimaryDark" />
                 <TextView
                     android:layout_width="match_parent"
-
+                    android:textSize="20dp"
                     android:layout_height="wrap_content"
                     android:text="Comedor UACM muestra menu semanal, avisos, horarios de cada plantel."/>
 
@@ -74,6 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Aviso"
+                        android:textSize="25dp"
                         android:gravity="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         android:textColor="@color/colorPrimary"/>
@@ -84,6 +86,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="20dp"
                         android:layout_gravity="center_vertical|right"
                         android:text="Evitar el llevarte o sacar los cubiertos y/o las charolas del comedor, ya que contamos con muy poco material y el extraerlos es significado de perdida para el mismo.
 ComedorUACM es de uso exclusivo para trabajadores y estudiantes de la UACM presentando credencial."/>

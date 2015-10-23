@@ -1,6 +1,9 @@
 package com.naveli.mobauacm.comedoruacm;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -8,17 +11,22 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.style.ParagraphStyle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 public class Comedores extends AppCompatActivity {
 
+    TextView dia;
+    Bundle bundle;
     String[] dias = {
             "LUNES",
             "MARTES",
@@ -70,10 +78,13 @@ public class Comedores extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = getIntent().getExtras();
+        bundle = getIntent().getExtras();
         setContentView(R.layout.activity_comedores);
+        dia = (TextView) findViewById(R.id.dia);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(bundle.getString("nombreComedor"));
 
@@ -97,30 +108,38 @@ public class Comedores extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-                        alertaMenu("LUNES");                      
+                        alertaMenu();                      
+                        dia.setText(dias[0]);
                         break;
                     case 1:
-                        alertaMenu("MARTES");
+                        alertaMenu();
+                        dia.setText(dias[1]);
                         break;
                     case 2:
-                         alertaMenu("MIÉRCOLES");
+                         alertaMenu();
+                         dia.setText(dias[2]);
                         break;
                     case 3:
-                         alertaMenu("JUEVES");
+                         alertaMenu();
+                         dia.setText(dias[3]);
                         break;
                     case 4:
-                         alertaMenu("VIERNES");
+                         alertaMenu();
+                         dia.setText(dias[4]);
                         break;
 
                 }
             }
         });
     }
-    public void alertaMenu(String dia){
+    public void alertaMenu(){
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(dia);
-        builder.setMessage("Aqui estara el menú del dia seleccionado que es: " + dia);
-        builder.setPositiveButton("OK",null);
+        LayoutInflater inflater = getLayoutInflater();
+
+        builder.setTitle(bundle.getString("nombreComedor"));
+        builder.setView(inflater.inflate(R.layout.formato_menu,null))
+                .setPositiveButton("OK", null).setView(dia.setText(dias[0]));
         builder.create();
         builder.show();
     }

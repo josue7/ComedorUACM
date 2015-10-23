@@ -17,15 +17,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-public class Comedores extends AppCompatActivity {
+public class Comedores extends AppCompatActivity{
 
-    TextView dia;
     Bundle bundle;
     String[] dias = {
             "LUNES",
@@ -80,7 +80,7 @@ public class Comedores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bundle = getIntent().getExtras();
         setContentView(R.layout.activity_comedores);
-        dia = (TextView) findViewById(R.id.dia);
+        TextView dia = (TextView) findViewById(R.id.dia);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -108,39 +108,37 @@ public class Comedores extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-                        alertaMenu();                      
-                        dia.setText(dias[0]);
+                        alerta(dias[0]);
+
                         break;
                     case 1:
-                        alertaMenu();
-                        dia.setText(dias[1]);
+                        alerta(dias[1]);
                         break;
                     case 2:
-                         alertaMenu();
-                         dia.setText(dias[2]);
+                        alerta(dias[2]);
                         break;
                     case 3:
-                         alertaMenu();
-                         dia.setText(dias[3]);
+                        alerta(dias[3]);
                         break;
                     case 4:
-                         alertaMenu();
-                         dia.setText(dias[4]);
+                        alerta(dias[4]);
                         break;
 
                 }
             }
         });
     }
-    public void alertaMenu(){
+    public void alerta(String dia){
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = getLayoutInflater();
+                final Dialog dialog = new Dialog(this);
+                dialog.setContentView(R.layout.formato_menu);
+                dialog.setTitle(bundle.getString("nombreComedor"));
+     
+                // set the custom dialog components - text, image and button
+                TextView text = (TextView) dialog.findViewById(R.id.dia);
+                text.setText(dia);
+                dialog.show();
 
-        builder.setTitle(bundle.getString("nombreComedor"));
-        builder.setView(inflater.inflate(R.layout.formato_menu,null))
-                .setPositiveButton("OK", null).setView(dia.setText(dias[0]));
-        builder.create();
-        builder.show();
     }
+
 }

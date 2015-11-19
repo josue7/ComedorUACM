@@ -22,4 +22,24 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+    <style name="ThemeCuautepec" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#00796b</item>
+    </style>
+    <style name="ThemeDelValle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#FFEB3B</item>
+        <item name="colorPrimaryDark">#FBC02D</item>
+    </style>
+    <style name="ThemeSLT" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimaryDark">#388E3C</item>
+    </style>
+    <style name="ThemeCentro" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#FF9800</item>
+        <item name="colorPrimaryDark">#F57C00</item>
+    </style>
+    <style name="ThemeCasaLiber" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryDark">#C2185B</item>
+    </style>
 </resources>

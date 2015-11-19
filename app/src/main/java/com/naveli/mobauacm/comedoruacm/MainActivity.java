@@ -2,6 +2,7 @@ package com.naveli.mobauacm.comedoruacm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -17,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TextView titulos = (TextView) findViewById(R.id.titulos_card);
+        titulos.setBackgroundColor(Color.argb(65,73,73,73) );
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +130,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.CH) {
 
             Intent a = new Intent(MainActivity.this, Comedores.class);
-            a.putExtra("nombreComedor","Centro Historico");
+            a.putExtra("nombreComedor","Centro Histórico");
             a.putExtra("imagen",comedores[1]);
             startActivity(a);
 

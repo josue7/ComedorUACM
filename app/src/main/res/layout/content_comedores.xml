@@ -32,26 +32,25 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:text="Lunes"
+                    android:text="Buzón de Avisos"
                     android:textColor="@color/colorPrimary"
                     android:textSize="25dp"/>
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:text="20 - Noviembre 2015"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"/>-->
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
+                    android:id="@+id/border"
                     android:background="@color/colorPrimaryDark" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:textSize="20dp"
-                    android:layout_height="wrap_content"
-                    android:text="Comedor"/>
+               <include layout="@layout/activity_list"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

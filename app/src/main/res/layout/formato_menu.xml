@@ -4,6 +4,7 @@
     android:layout_height="fill_parent"
     android:id="@+id/formato_menu">
 
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -17,6 +18,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="15dp">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +35,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="20 - Noviembre - 2015"
         android:id="@+id/fecha"
         android:layout_below="@+id/dia"
         android:layout_centerHorizontal="true"
@@ -52,7 +53,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Desayuno 9:30 a 12:00 hrs"
         android:id="@+id/horarioMat"
         android:paddingTop="25dp"
         android:textColor="@color/colorPrimary"
@@ -64,7 +64,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Chilaquiles verdes con pollo, acompañados de frijoles"
         android:id="@+id/desayuno"
         android:textSize="20dp"
         android:layout_below="@+id/horarioMat"
@@ -78,7 +77,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Comida 13:30 a 17:00 hrs"
         android:id="@+id/horarioVes"
         android:textColor="@color/colorPrimary"
         android:layout_below="@+id/desayuno"
@@ -90,7 +88,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Bistec a la mexicana, acompañado de frijoles y arroz."
         android:id="@+id/comida"
         android:textSize="20dp"
         android:layout_below="@+id/horarioVes"

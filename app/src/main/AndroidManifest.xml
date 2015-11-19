@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.naveli.mobauacm.comedoruacm"
     android:installLocation="preferExternal" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Clases jiho-->
+        <!-- Clases hjio-->
         <activity
             android:name=".Comedores"
             android:label="@string/title_activity_comedores"
@@ -30,8 +32,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.naveli.mobauacm.comedoruacm.MainActivity" />
         </activity>
-
-
+        <activity android:name=".SetMenu"/>
     </application>
 
 </manifest>

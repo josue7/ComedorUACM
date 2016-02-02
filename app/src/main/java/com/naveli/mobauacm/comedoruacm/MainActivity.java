@@ -1,5 +1,6 @@
 package com.naveli.mobauacm.comedoruacm;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,10 +23,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    public static final String FRAGMENT_TAG = "fragment_tag";
+    private FragmentManager mFragmentManager;
+    String result = "";
+    TextView textReturned;
+
 
     public static final int[] comedores = {
             R.mipmap.casalibertad,
@@ -31,6 +47,11 @@ public class MainActivity extends AppCompatActivity
             R.mipmap.sanlorenzo
 
     };
+    public void updateResult(String inputText) {
+        result = inputText;
+        textReturned.setText(result);
+
+    }
     private void showSnackBar(String msg) {
         Snackbar
                 .make(findViewById(R.id.drawer_layout), msg, Snackbar.LENGTH_LONG)
@@ -53,11 +74,23 @@ public class MainActivity extends AppCompatActivity
         }
         return false;
     }
+    public void onDataPass(String data) {
+        Log.d("LOG", "hello " + data);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textReturned = (TextView)findViewById(R.id.fbUser);
+
+        /*Parse.initialize(this, "JGTQI9SubWhcm34J6JUk690fGfnmldVXyTr2wNbW",
+                "w9Icxfl0ZdUsErn4BEKIuprLY1D50AM6j3cpxDoN");
+        ParseInstallation.getCurrentInstallation().saveInBackground();*/
+
+        mFragmentManager = getSupportFragmentManager();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView titulos = (TextView) findViewById(R.id.titulos_card);
@@ -108,10 +141,19 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            toggleFragment();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void toggleFragment() {
+        Fragment fragment = mFragmentManager.findFragmentByTag(FRAGMENT_TAG);
+        final FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.replace(android.R.id.content, new LoginFacebook_CUACM(),FRAGMENT_TAG);
+        transaction.commit();
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
